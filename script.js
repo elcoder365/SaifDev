@@ -55,8 +55,8 @@ const content = {
       },
       shows: {
         title: '📺 مسلسلات الطفولة', tags: [
-          { name: 'Ninjago' },
-          { name: 'The Deep' },
+          { name: 'Ninjago', img: 'https://res.cloudinary.com/dp0df8dxy/image/upload/v1773750857/wallpaperflare.com_wallpaper_oanphk.jpg' },
+          { name: 'The Deep', img: 'https://res.cloudinary.com/dp0df8dxy/image/upload/v1773751175/maxresdefault_oq1d4f.jpg' },
           { name: 'نوبي ودورايمون', img: 'https://upload.wikimedia.org/wikipedia/en/b/bd/Doraemon_character.png' }
         ]
       },
@@ -138,8 +138,8 @@ const content = {
       },
       shows: {
         title: '📺 Childhood Shows', tags: [
-          { name: 'Ninjago' },
-          { name: 'The Deep' },
+          { name: 'Ninjago', img: 'https://res.cloudinary.com/dp0df8dxy/image/upload/v1773750857/wallpaperflare.com_wallpaper_oanphk.jpg' },
+          { name: 'The Deep', img: 'https://res.cloudinary.com/dp0df8dxy/image/upload/v1773751175/maxresdefault_oq1d4f.jpg' },
           { name: 'Nobita & Doraemon', img: 'https://upload.wikimedia.org/wikipedia/en/b/bd/Doraemon_character.png' }
         ]
       },
@@ -505,70 +505,54 @@ function initAudioPlayers() {
     let isDragging = false;
 
     function formatTime(time) {
-      if(!time) return '0:00';
-      let mins = Math.floor(time / 60);
-      let secs = Math.floor(time % 60);
+      if (!time || isNaN(time)) return '0:00';
+      const mins = Math.floor(time / 60);
+      const secs = Math.floor(time % 60);
       return `${mins}:${secs < 10 ? '0' + secs : secs}`;
     }
 
     function togglePlay() {
       if (audio.paused) {
-        document.querySelectorAll('audio').forEach(a => {
-          if (a !== audio) {
-            a.pause();
-            const pBtn = a.parentElement.querySelector('.play-pause-btn');
-            if (pBtn) { pBtn.innerHTML = '▶'; pBtn.classList.remove('playing'); }
-            const pImg = a.closest('.track-box')?.querySelector('.track-img');
-            if (pImg) pImg.classList.remove('playing');
-          }
-        });
-        audio.play();
-        btn.innerHTML = '⏸';
-        btn.classList.add('playing');
-        if (trackImg) trackImg.classList.add('playing');
+        document.querySelectorAll('audio').forEach(a => { if (a !== audio) a.pause(); });
+        audio.play().catch(() => {});
       } else {
         audio.pause();
-        btn.innerHTML = '▶';
-        btn.classList.remove('playing');
-        if (trackImg) trackImg.classList.remove('playing');
       }
     }
 
     btn.addEventListener('click', togglePlay);
 
-    function seek(e) {
-      if (!audio.duration) return;
-      const rect = progressWrap.getBoundingClientRect();
-      let clientX = e.clientX;
-      if (e.touches && e.touches.length > 0) clientX = e.touches[0].clientX;
-      let clickX = clientX - rect.left;
-      if (clickX < 0) clickX = 0;
-      if (clickX > rect.width) clickX = rect.width;
-      audio.currentTime = (clickX / rect.width) * audio.duration;
-    }
+    audio.addEventListener('play', () => {
+      btn.innerHTML = '⏸'; btn.classList.add('playing');
+      if (trackImg) trackImg.classList.add('playing');
+    });
 
-    progressWrap.addEventListener('mousedown', (e) => { isDragging = true; seek(e); });
-    progressWrap.addEventListener('touchstart', (e) => { isDragging = true; seek(e); }, {passive: true});
-    
-    window.addEventListener('mousemove', (e) => { if (isDragging) seek(e); });
-    window.addEventListener('touchmove', (e) => { if (isDragging) seek(e); }, {passive: true});
-    
-    window.addEventListener('mouseup', () => { isDragging = false; });
-    window.addEventListener('touchend', () => { isDragging = false; });
+    audio.addEventListener('pause', () => {
+      btn.innerHTML = '▶'; btn.classList.remove('playing');
+      if (trackImg) trackImg.classList.remove('playing');
+    });
+
+    progressWrap.addEventListener('click', (e) => {
+      if (!audio.duration || isNaN(audio.duration)) return;
+      const rect = progressWrap.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const percent = clickX / rect.width;
+      audio.currentTime = percent * audio.duration;
+      // Immediate visual update
+      progressFilled.style.width = `${percent * 100}%`;
+      timeDisplay.textContent = formatTime(audio.currentTime);
+    });
 
     audio.addEventListener('timeupdate', () => {
-      if(!audio.duration || isDragging) return;
+      if (!audio.duration || isNaN(audio.duration) || isDragging) return;
       const percent = (audio.currentTime / audio.duration) * 100;
       progressFilled.style.width = `${percent}%`;
       timeDisplay.textContent = formatTime(audio.currentTime);
     });
 
     audio.addEventListener('ended', () => {
-      btn.innerHTML = '▶';
-      btn.classList.remove('playing');
       progressFilled.style.width = '0%';
       timeDisplay.textContent = '0:00';
-      if (trackImg) trackImg.classList.remove('playing');
     });
   });
 }
