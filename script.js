@@ -179,7 +179,11 @@ const images = {
 };
 
 // ===== STATE =====
-let currentLang = localStorage.getItem('lang') || 'ar';
+if (!localStorage.getItem('en_default_set')) {
+  localStorage.setItem('lang', 'en');
+  localStorage.setItem('en_default_set', 'true');
+}
+let currentLang = localStorage.getItem('lang') || 'en';
 let currentTheme = localStorage.getItem('theme') || 'light';
 let typingTimer = null;
 
