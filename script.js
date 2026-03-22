@@ -6,7 +6,7 @@ const content = {
     hero: {
       name: 'سيف الدين',
       tagline: 'أصنع المستقبل بالكود',
-      desc: ' شغوف بالأمن السيبراني، ومُحب لاستكشاف عالم الأكواد وصناعة المستقبل.',
+      desc: 'شغوف بالأمن السيبراني، ومُحب لاستكشاف عالم الأكواد وصناعة المستقبل.',
       btnProjects: '🚀 مشاريعي',
       btnAbout: '👋 تعرف عليّ',
       typing: ['شغوف في لغة Python 🐍', 'مستكشف أمن سيبراني 🛡️', 'أحب صناعة الانيميشن كهواية 🎬', 'Gamer 🎮', 'Hacker In Training 💻', 'مُتحمس لعالم الذكاء الاصطناعي 🤖']
@@ -529,11 +529,52 @@ function initAudioPlayers() {
     audio.addEventListener('play', () => {
       btn.innerHTML = '⏸'; btn.classList.add('playing');
       if (trackImg) trackImg.classList.add('playing');
+      
+      const trackBox = player.closest('.track-box');
+      if (trackBox && player.closest('#showsShowcase')) {
+        const videoSrc = trackBox.dataset.videoSrc;
+        const trackVideo = trackBox.querySelector('.track-video');
+        const mainImg = document.getElementById('ninjagoMainImg');
+        const mainVideo = document.getElementById('ninjagoMainVideo');
+        
+        // Prevent playing if it's just the placeholder
+        if (videoSrc && !videoSrc.includes('PLACEHOLDER')) {
+          if (window.innerWidth <= 768) {
+             trackImg.style.display = 'none';
+             trackVideo.style.display = 'block';
+             trackVideo.src = videoSrc;
+             trackVideo.play().catch(()=>{});
+          } else {
+             mainImg.style.display = 'none';
+             mainVideo.style.display = 'block';
+             mainVideo.src = videoSrc;
+             mainVideo.play().catch(()=>{});
+          }
+        }
+      }
     });
 
     audio.addEventListener('pause', () => {
       btn.innerHTML = '▶'; btn.classList.remove('playing');
       if (trackImg) trackImg.classList.remove('playing');
+      
+      const trackBox = player.closest('.track-box');
+      if (trackBox && player.closest('#showsShowcase')) {
+        const trackVideo = trackBox.querySelector('.track-video');
+        const mainImg = document.getElementById('ninjagoMainImg');
+        const mainVideo = document.getElementById('ninjagoMainVideo');
+        
+        if (trackVideo && trackImg.style.display === 'none') {
+           trackVideo.pause();
+           trackVideo.style.display = 'none';
+           trackImg.style.display = 'block';
+        }
+        if (mainVideo && mainImg && mainImg.style.display === 'none') {
+           mainVideo.pause();
+           mainVideo.style.display = 'none';
+           mainImg.style.display = 'block';
+        }
+      }
     });
 
     progressWrap.addEventListener('click', (e) => {
