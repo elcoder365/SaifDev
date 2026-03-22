@@ -6,7 +6,7 @@ const content = {
     hero: {
       name: 'سيف الدين',
       tagline: 'أصنع المستقبل بالكود',
-      desc: 'طالب في الصف الثالث الإعدادي. شغوف بالأمن السيبراني، ومُحب لاستكشاف عالم الأكواد وصناعة المستقبل.',
+      desc: ' شغوف بالأمن السيبراني، ومُحب لاستكشاف عالم الأكواد وصناعة المستقبل.',
       btnProjects: '🚀 مشاريعي',
       btnAbout: '👋 تعرف عليّ',
       typing: ['شغوف في لغة Python 🐍', 'مستكشف أمن سيبراني 🛡️', 'أحب صناعة الانيميشن كهواية 🎬', 'Gamer 🎮', 'Hacker In Training 💻', 'مُتحمس لعالم الذكاء الاصطناعي 🤖']
@@ -89,7 +89,7 @@ const content = {
     hero: {
       name: 'Saif Eldin',
       tagline: 'Building the Future with Code',
-      desc: 'A 3rd-year prep school student. Passionate about cybersecurity, and loves exploring the world of code and shaping the future.',
+      desc: 'Passionate about cybersecurity, and loves exploring the world of code and shaping the future.',
       btnProjects: '🚀 Projects',
       btnAbout: '👋 About Me',
       typing: ['Passionate about Python 🐍', 'Cybersecurity Explorer 🛡️', 'Animation Hobby Enthusiast 🎬', 'Gamer 🎮', 'Hacker In Training 💻', 'AI Enthusiast 🤖']
