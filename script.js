@@ -40,7 +40,7 @@ const content = {
       title: 'تحديات الأكواد',
       text: 'في عالم البرمجة، ليس كل شيء يعمل من المرة الأولى! أحياناً أواجه أخطاء برمجية <strong style="color:var(--accent)">(Bugs)</strong> غريبة تجعلني في حيرة تامة... لكني لا أستسلم أبداً حتى أصلح الأكواد وأجد الحل. 💪',
       code: 'while (bug !== null) { debug(); coffee++; }',
-      codeExplain: '💡 هذا الكود يعني: طالما هناك خطأ برمجي (Bug)، استمر في إصلاحه (debug) واشرب مزيد من القهوة! ☕'
+      codeExplain: '<span dir="auto">💡 هذا الكود يعني: طالما هناك خطأ برمجي (Bug)، استمر في إصلاحه (debug) واشرب مزيد من القهوة! ☕</span>'
     },
     myworld: {
       title: 'عالمي الخاص',
@@ -81,7 +81,7 @@ const content = {
       ]
     },
     contact: { title: 'تواصل معي', desc: 'يسعدني التواصل معك! يمكنك مراسلتي عبر:' },
-    footer: { text: 'تمت البرمجة بواسطة ❤️ <strong style="color:var(--primary)">سيف</strong>', code: 'System.out.println("STAY AWESOME");', codeExplain: '💡 هذا كود بلغة Java يطبع رسالة: "ابقى رائعاً!" — رسالة إيجابية مني لك! ✨' }
+    footer: { text: 'تمت البرمجة بواسطة ❤️ <strong style="color:var(--primary)">سيف</strong>', code: 'System.out.println("STAY AWESOME");', codeExplain: '<span dir="auto">💡 هذا كود بلغة Java يطبع رسالة: "ابقى رائعاً!" — رسالة إيجابية مني لك! ✨</span>' }
   },
   en: {
     dir: 'ltr',
@@ -123,7 +123,7 @@ const content = {
       title: 'Code Challenges',
       text: 'In the world of programming, not everything works on the first try! Sometimes I face weird <strong style="color:var(--accent)">Bugs</strong> that leave me puzzled... but I never give up until I fix the code and find the solution. 💪',
       code: 'while (bug !== null) { debug(); coffee++; }',
-      codeExplain: '💡 This code means: as long as there\'s a Bug, keep debugging and drink more coffee! ☕'
+      codeExplain: '<span dir="auto">💡 This code means: as long as there\'s a Bug, keep debugging and drink more coffee! ☕</span>'
     },
     myworld: {
       title: 'My World',
@@ -164,7 +164,7 @@ const content = {
       ]
     },
     contact: { title: 'Get in Touch', desc: 'I\'d love to hear from you! Feel free to reach out:' },
-    footer: { text: 'Coded with ❤️ by <strong style="color:var(--primary)">Saif</strong>', code: 'System.out.println("STAY AWESOME");', codeExplain: '💡 This Java code prints: "STAY AWESOME!" — a positive message from me to you! ✨' }
+    footer: { text: 'Coded with ❤️ by <strong style="color:var(--primary)">Saif</strong>', code: 'System.out.println("STAY AWESOME");', codeExplain: '<span dir="auto">💡 This Java code prints: "STAY AWESOME!" — a positive message from me to you! ✨</span>' }
   }
 };
 
@@ -289,9 +289,9 @@ function renderPage() {
   d.getElementById('footerText').innerHTML = lang.footer.text;
   d.getElementById('footerCode').textContent = lang.footer.code;
 
-  // Code tooltips
-  d.getElementById('challengeTooltip').textContent = lang.challenges.codeExplain;
-  d.getElementById('footerTooltip').textContent = lang.footer.codeExplain;
+  // Code tooltips (use innerHTML for bidi support)
+  d.getElementById('challengeTooltip').innerHTML = lang.challenges.codeExplain;
+  d.getElementById('footerTooltip').innerHTML = lang.footer.codeExplain;
 
   // Language btn label
   d.getElementById('langBtn').textContent = currentLang === 'ar' ? 'EN' : 'عربي';
