@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سيف الدين | Portfolio</title>
+<meta name="description" content="Saif Eldin's Portfolio | Python Enthusiast and Cybersecurity Researcher">
+<link rel="icon" href="https://res.cloudinary.com/dp0df8dxy/image/upload/v1773708528/Gemini_Generated_Image_w46jsbw46jsbw46j-removebg-preview_xcgrjr.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Readex+Pro:wght@400;500;600;700&family=Outfit:wght@400;600;700;800;900&family=Orbitron:wght@400;700;900&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PEJ6CJRWYS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PEJ6CJRWYS');
+</script>
+</head>
+<body>
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="loader-ring"></div>
+  <div class="loader-text">LOADING...</div>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <img src="https://res.cloudinary.com/dp0df8dxy/image/upload/v1773708528/Gemini_Generated_Image_w46jsbw46jsbw46j-removebg-preview_xcgrjr.png" alt="Logo">
+    SF
+  </div>
+  <div class="nav-center" id="navCenter">
+    <a href="#hero" id="navHome">الرئيسية</a>
+    <a href="#about" id="navAbout">من أنا</a>
+    <a href="#aspirations" id="navAspirations">طموحاتي</a>
+    <a href="#projects" id="navProjects">مشاريعي</a>
+    <a href="#challenges" id="navChallenges">التحديات</a>
+    <a href="#myworld" id="navWorld">عالمي</a>
+    <a href="#contact" id="navContact">تواصل</a>
+  </div>
+  <div class="nav-right">
+    <button class="toggle-btn" id="langBtn" onclick="toggleLang()" title="Switch Language">EN</button>
+    <button class="toggle-btn" id="themeBtn" onclick="toggleTheme()" title="Toggle Theme">☀️</button>
+    <div class="menu-btn" id="menuBtn">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- PARTICLES -->
+<canvas id="particles"></canvas>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1><span class="line1" id="heroName">سيف الدين</span><span class="line2" id="heroTagline">أصنع المستقبل بالكود</span></h1>
+      <p class="hero-desc" id="heroDesc"></p>
+      <div class="typing-wrapper">&lt; <span id="typeTarget"></span><span class="cursor">|</span> /&gt;</div>
+      <div class="hero-btns">
+        <a href="#projects" class="btn btn-primary" id="heroBtnProjects">🚀 مشاريعي</a>
+        <a href="#about" class="btn btn-outline" id="heroBtnAbout">👋 تعرف عليّ</a>
+      </div>
+    </div>
+    <div class="hero-img-wrap">
+      <div class="hero-img-ring"></div>
+      <div class="hero-img-ring2"></div>
+      <img id="heroImg" src="" alt="Saif" loading="eager">
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="section-title reveal" id="aboutTitle"><span>من أنا؟</span></h2>
+  <div class="about-wrap">
+    <div class="about-img reveal-right">
+      <img id="aboutImg" src="" alt="Saif thinking" loading="lazy">
+    </div>
+    <div class="about-text reveal-left">
+      <p id="aboutText"></p>
+    </div>
+  </div>
+</section>
+
+<!-- TECH MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <div class="marquee-content">
+      <span>🐍 Python</span><span>🌐 HTML &amp; CSS</span><span>⚡ JavaScript</span><span>🛡️ Kali Linux</span><span>🤖 AI</span><span>🎮 Gaming</span><span>🎬 Animation</span><span>💻 VS Code</span><span>🔧 Git</span><span style="display:inline-flex;align-items:center;gap:6px"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub</span><span>🧠 Problem Solving</span><span>🐧 Linux</span><span>📱 Responsive</span><span>🔐 Cybersecurity</span><span>☕ Java</span><span>🔥 Firebase</span>
+      <span>🐍 Python</span><span>🌐 HTML &amp; CSS</span><span>⚡ JavaScript</span><span>🛡️ Kali Linux</span><span>🤖 AI</span><span>🎮 Gaming</span><span>🎬 Animation</span><span>💻 VS Code</span><span>🔧 Git</span><span style="display:inline-flex;align-items:center;gap:6px"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub</span><span>🧠 Problem Solving</span><span>🐧 Linux</span><span>📱 Responsive</span><span>🔐 Cybersecurity</span><span>☕ Java</span><span>🔥 Firebase</span>
+      <span>🐍 Python</span><span>🌐 HTML &amp; CSS</span><span>⚡ JavaScript</span><span>🛡️ Kali Linux</span><span>🤖 AI</span><span>🎮 Gaming</span><span>🎬 Animation</span><span>💻 VS Code</span><span>🔧 Git</span><span style="display:inline-flex;align-items:center;gap:6px"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub</span><span>🧠 Problem Solving</span><span>🐧 Linux</span><span>📱 Responsive</span><span>🔐 Cybersecurity</span><span>☕ Java</span><span>🔥 Firebase</span>
+      <span>🐍 Python</span><span>🌐 HTML &amp; CSS</span><span>⚡ JavaScript</span><span>🛡️ Kali Linux</span><span>🤖 AI</span><span>🎮 Gaming</span><span>🎬 Animation</span><span>💻 VS Code</span><span>🔧 Git</span><span style="display:inline-flex;align-items:center;gap:6px"><svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub</span><span>🧠 Problem Solving</span><span>🐧 Linux</span><span>📱 Responsive</span><span>🔐 Cybersecurity</span><span>☕ Java</span><span>🔥 Firebase</span>
+    </div>
+  </div>
+</div>
+
+<!-- ASPIRATIONS -->
+<section id="aspirations">
+  <h2 class="section-title reveal" id="aspirationsTitle"><span>ما أطمح لتعلمه</span></h2>
+  <div class="aspire-img-wrap reveal">
+    <img id="aspirationsImg" src="" alt="Saif focused" loading="lazy">
+  </div>
+  <div class="aspire-grid" id="aspireGrid"></div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2 class="section-title reveal" id="projectsTitle"><span>مشاريعي البرمجية</span></h2>
+  <div class="projects-img-wrap reveal">
+    <img id="projectsImg" src="" alt="Saif coding" loading="lazy">
+  </div>
+  <p style="text-align:center;color:var(--text2);max-width:700px;margin:0 auto 40px;font-size:1.05rem" class="reveal" id="projectsIntro"></p>
+  <div class="projects-grid" id="projGrid"></div>
+</section>
+
+<!-- CHALLENGES -->
+<section id="challenges">
+  <h2 class="section-title reveal" id="challengesTitle"><span>تحديات الأكواد</span></h2>
+  <div class="challenge-box reveal">
+    <img id="challengeImg" src="" alt="Saif confused" loading="lazy">
+    <p id="challengeText"></p>
+    <div class="code-info-wrap">
+      <button class="code-info-btn" aria-label="Info">i</button>
+      <div class="code-info-tooltip" id="challengeTooltip"></div>
+      <code class="code-line" id="challengeCode"></code>
+    </div>
+  </div>
+</section>
+
+<!-- MY WORLD -->
+<section id="myworld">
+  <h2 class="section-title reveal" id="myworldTitle"><span>عالمي الخاص</span></h2>
+  <div class="world-content">
+    <div class="world-top reveal">
+      <img id="worldImg" src="" alt="Saif laughing" loading="lazy">
+      <p id="worldIntro"></p>
+    </div>
+    <div class="world-grid" id="worldGrid"></div>
+
+    <!-- SHOWCASE SECTION -->
+    <div class="shows-showcase mt-5" id="showsShowcase">
+      <!-- Ninjago -->
+      <div class="showcase-card reveal">
+        <div class="showcase-header">
+          <img src="https://res.cloudinary.com/dp0df8dxy/image/upload/v1773750857/wallpaperflare.com_wallpaper_oanphk.jpg" alt="Ninjago" class="main-show-img">
+          <h3 id="ninjagoTitle">Ninjago</h3>
+        </div>
+        <div class="audio-tracks">
+          <div class="track-box">
+             <img src="https://res.cloudinary.com/dp0df8dxy/image/upload/v1773749046/hq720_hfc9jb.jpg" class="track-img" alt="Track Cover">
+             <div class="track-info">
+                <h4>Dragons Rising</h4>
+                <p>Music Video</p>
+                <div class="custom-audio-player">
+                  <button class="play-pause-btn">▶</button>
+                  <div class="progress-wrap"><div class="progress-filled"></div></div>
+                  <span class="time-display">0:00</span>
+                  <audio src="LEGO Ninjago_ Dragons Rising music video.mp3" preload="metadata"></audio>
+                </div>
+             </div>
+          </div>
+          <div class="track-box">
+             <img src="https://res.cloudinary.com/dp0df8dxy/image/upload/v1773749047/Ninjago_DragonsRising_2025_S03_Poster_1_Vertical_29_ut3gle.webp" class="track-img" alt="Track Cover">
+             <div class="track-info">
+                <h4>Ninjago Music</h4>
+                <p>Official Audio</p>
+                <div class="custom-audio-player">
+                  <button class="play-pause-btn">▶</button>
+                  <div class="progress-wrap"><div class="progress-filled"></div></div>
+                  <span class="time-display">0:00</span>
+                  <audio src="NINJAGO Dragons Rising  Main Theme - Season 1 (Official Audio).mp3" preload="metadata"></audio>
+                </div>
+             </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <h2 class="section-title reveal" id="statsTitle"><span>بالأرقام</span></h2>
+  <div class="stats-grid" id="statsGrid"></div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="section-title reveal" id="contactTitle"><span>تواصل معي</span></h2>
+  <div class="contact-content">
+    <p class="reveal" id="contactDesc">يسعدني التواصل معك! يمكنك مراسلتي عبر:</p>
+      <a href="https://t.me/Drmino02" target="_blank" class="contact-btn telegram">
+        <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        <div class="btn-label"><small>Telegram</small><span>@Drmino02</span></div>
+      </a>
+      <a href="mailto:warden.zone.contact@gmail.com" class="contact-btn gmail">
+        <svg viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+        <div class="btn-label"><small>Gmail</small><span>warden.zone.contact</span></div>
+      </a>
+      <a href="https://github.com/elcoder365" target="_blank" class="contact-btn github">
+        <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        <div class="btn-label"><small>GitHub</small><span>elcoder365</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p id="footerText"></p>
+  <div class="code-info-wrap" style="max-width:500px;margin:10px auto 0">
+    <button class="code-info-btn" aria-label="Info">i</button>
+    <div class="code-info-tooltip" id="footerTooltip"></div>
+    <div class="code-sign" id="footerCode"></div>
+  </div>
+</footer>
+
+<!-- SCROLL TO TOP -->
+<button id="scrollTop" title="Scroll to top">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
